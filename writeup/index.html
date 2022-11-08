@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../writeup.css">
+    <title>Solution to IDOR LAB</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Solution To IDOR LAB</h1>
+        <a href="https://randompost12.github.io/idor/">Challenge Link</a>
+
+        <section>
+
+        <div class="content">
+            <p class="question">Step 1: Checking Cookie</p>
+            <p class="answer">we can see cookie is set in the site with name user and it is base64 encoded.</p>
+            <img src="../assets/images/developertool.png" alt="">
+        </div>
+
+        <div class="content">
+            <p class="question">Step 2: Decoding Base64</p>
+            <p class="answer">After decoding that base64 encoded cookie we can see the formate of cookie.Which is something like <b>userid:1</b></p>
+            <img src="../assets/images/base64decoded.png" alt="">
+        </div>
+
+        <div class="content">
+            <p class="question">Step 3: Testing</p>
+            <p class="answer">Cookie in this site is weakly encdoed and can be easily manipulate by other user. Let's change <b>userid:1</b> to <b>userid:2</b> and again encode it</p>
+            <img src="../assets/images/encodebase64.png" alt="">
+        </div>
+
+        <div class="content">
+            <p class="question">Step 4: Finding Other User</p>
+            <p class="answer">After changing cookie in browser with our <b>userid:2</b> base64 encoded text we are logged into another user account.</p>
+            <img src="../assets/images/userchanged.png" alt="">
+        </div>
+        <div class="content">
+            <p class="question">Step 5: Finding Admin Account</p>
+            <p class="answer">Changing Userid unitl we find admin account. <b>userid:5</b>, We can find flag in note section password:<b>flag{sankalpa}</b></p>
+            <img src="../assets/images/admin.png" alt="">
+        </div>
+        <p class="congrats">Congratulations !! You solved the Lab</p>
+
+    </section>
+</div>
+
+
+</body>
+</html>
